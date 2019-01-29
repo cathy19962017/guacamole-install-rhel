@@ -14,7 +14,7 @@
 #####    UNIVERSAL VARS    ###################################
 # USER CONFIGURABLE        #
 # Generic
-SCRIPT_BUILD="2019_1_28" # Scripts Date for last modified as "yyyy_mm_dd"
+SCRIPT_BUILD="2019_1_29" # Scripts Date for last modified as "yyyy_mm_dd"
 ADM_POC="Local Admin, admin@admin.com"  # Point of contact for the Guac server admin
 
 # Versions
@@ -321,10 +321,10 @@ echo -n "${Green} Enter the LDAP Username-Attribute (default sAMAccountName): ${
   	read LDAP_UNAME_ATTR
   	LDAP_UNAME_ATTR=${LDAP_UNAME_ATTR:-sAMAccountName}
 	
-LDAP_SEARCH_FILTER_DEF="objectCategory=*"
-echo -n "${Green} Enter a custom LDAP user search filter (default objectCategory=*): ${Yellow}"
-  	read LDAP_SEARCH_FILTER
-  	LDAP_SEARCH_FILTER=${LDAP_SEARCH_FILTER:-${LDAP_SEARCH_FILTER_DEF}}
+LDAP_SEARCH_FILTER_DEF="(objectClass=*)"
+echo -n "${Green} Enter a custom LDAP user search filter (default \"${LDAP_SEARCH_FILTER_DEF}\"): ${Yellow}"
+	read LDAP_SEARCH_FILTER
+	LDAP_SEARCH_FILTER=${LDAP_SEARCH_FILTER:-${LDAP_SEARCH_FILTER_DEF}}
 }
 
 #####    CUSTOM EXTENSION MENU    ########################################
